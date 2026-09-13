@@ -1,11 +1,21 @@
+import Image from 'next/image';
+import styles from './PokemonImage.module.css';
 interface PokemonImageProps {
-    url: string;
+    src: string;
+    alt: string;
 }
 
-const PokemonImage = ({ url }: PokemonImageProps) => {
-    console.log({ url });
-
-    return <div>PokemonImage Component</div>;
+const PokemonImage = ({ src, alt }: PokemonImageProps) => {
+    return (
+        <Image
+            className={styles.image}
+            src={src}
+            alt={alt}
+            style={{ objectFit: 'contain' }}
+            width={200}
+            height={150}
+        />
+    );
 };
 
 export default PokemonImage;

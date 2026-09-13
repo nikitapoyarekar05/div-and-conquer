@@ -1,0 +1,47 @@
+.sortControls {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.sortLabel {
+    font-weight: bold;
+}
+
+.sortOptions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.sortButton {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    height: 3rem;
+    padding: 0 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    background-color: #f9f9f9;
+    color: #333;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 0.05rem;
+    cursor: pointer;
+}
+
+.sortButton:hover {
+    background-color: #e0e0e0;
+    border-color: #999;
+    color: #000;
+}
+
+.sortButton.active {
+    background-color: #333;
+    border-color: #333;
+    color: #fff;
+}
+
+.arrow {
+    font-size: 0.75rem;
+}

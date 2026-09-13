@@ -1,13 +1,16 @@
+import styles from './StatItem.module.css';
 interface StatItemProps {
-    stat: {
-        name: string;
-        value: number;
-    };
+    label: string;
+    value: number;
 }
-const StatItem = ({ stat }: StatItemProps) => {
-    console.log({ stat });
 
-    return <div>StatItem Component</div>;
+const StatItem = ({ label, value }: StatItemProps) => {
+    return (
+        <div className={styles.statBox}>
+            <dt className={styles.label}>{label}</dt>
+            <dd className={styles.value}>{value}</dd>
+        </div>
+    );
 };
 
 export default StatItem;

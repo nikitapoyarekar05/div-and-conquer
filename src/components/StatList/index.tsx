@@ -1,19 +1,20 @@
+import styles from './StatList.module.css';
+import { PokemonStats } from '@/types/pokemon';
+
 import StatItem from '../StatItem';
 
 interface StatListProps {
-    stats: {
-        name: string;
-        value: number;
-    }[];
+    stats: PokemonStats;
 }
 
 const StatList = ({ stats }: StatListProps) => {
     return (
-        <div>
-            {stats.map((stat) => (
-                <StatItem key={stat.name} stat={stat} />
-            ))}
-        </div>
+        <dl className={styles.statList}>
+            <StatItem label="HP" value={stats.hp} />
+            <StatItem label="ATK" value={stats.attack} />
+            <StatItem label="DEF" value={stats.defense} />
+            <StatItem label="SPD" value={stats.speed} />
+        </dl>
     );
 };
 

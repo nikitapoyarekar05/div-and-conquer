@@ -1,0 +1,22 @@
+.searchBar {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.searchLabel {
+    font-weight: bold;
+}
+
+.input {
+    height: 3rem;
+    padding: 0 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+}
+
+.input:focus {
+    outline: none;
+    border-color: #666;
+}

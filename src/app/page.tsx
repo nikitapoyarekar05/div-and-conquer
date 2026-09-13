@@ -1,15 +1,15 @@
 import styles from './page.module.css';
-
 import Summary from '@/components/Summary';
 import Explorer from '@/components/Explorer';
 
-export default function Home() {
+import { fetchPokemonList } from '@/lib/api/pokemon';
+
+export default async function Home() {
+    const pokemon = await fetchPokemonList();
     return (
-        <div>
-            <main className={styles.page}>
-                <Summary />
-                <Explorer />
-            </main>
-        </div>
+        <main className={styles.page}>
+            <Summary />
+            <Explorer pokemons={pokemon} />
+        </main>
     );
 }
