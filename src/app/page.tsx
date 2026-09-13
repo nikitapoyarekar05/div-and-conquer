@@ -6,7 +6,7 @@ import Explorer from '@/components/Explorer';
 export default function Home() {
     return (
         <div>
-            <main>
+            <main className={styles.page}>
                 <Summary />
                 <Explorer />
             </main>
