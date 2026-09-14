@@ -1,0 +1,34 @@
+MY APPROACH
+
+This is a small pokemon explorer page built using Next.js (App router) that fetches live data from the poke API, and let's you search pokemon by name and sort by ID or any of the 4 stats. 
+
+MY CHOICES DURING SETUP:
+- Next.js App router for the framework, since it gives Server components for data-fetching without extra client-side loading states, plus file based routing and built-in loadind/error states.
+- TypeScript throughout, so the shape of API responses, mapped domain types and component pros are all checked at compile time rather than discovered at runtime
+- React Compiler instead of hand placed useMemo/useCallback so that components stay simpler while compiler ahndles memoization automatically. I still memoise the filter and/or sort logic in Explorer explicitly since that's derived data
+- CSS modules over utility library like Tailwind becuase app is amll and scoped to a specific ask. 
+- Vitest and RTL as Vitest runs faster and RTL keeps tests focused on user behaviour.
+- ESLINT + Pretier + husky + lint -> to catch style and correctness issues before they are committed. 
+
+ARCHITECTURE:
+- The home page is a server component that fetches the pokemon list once, at the request time, and passes it down as prop. 
+- All interactive state (search text, sort key, sort direction) lives in a single client component 'Explorer'.
+- Everything below it (PokemonGrid, Pokemoncard, StatList, StatItem, SortControls, SearchBar) is presentational. Each render whatever data or callbacks it is given and holds no state of its own.
+
+DATA LAYER:
+- Poke API splits list and detail data across separate endpoints, so fetchPokemonList fetches every details concurrently with Promise.allSettled so that if there is any error, like if one detail request fails, it is dropped rather failing the whole page. 
+- A small adapter mapPokemonDetail, translates poke API's raw response into a simpler internal Pokemon type so the rest of the app never has to know what the third party API actually looks like.
+
+SEARCH & SORT:
+- Both run client-side, in memory, agsinat the already loaded list.
+- Filtering and sorting are memoized seperately, so neither recomputes unless its own inputs change.
+- Clicking an active sort key toggles its direction; clicking a different key switches to it, defaulting to ascending.
+
+TESTING:
+Unit and component tests with Vitest and React testing library cover:
+- the core interactive behavior - search filtering, sort toggling and filter and sort combined
+- each presentational component in isolation
+
+KNOWN LIMITATIONS:
+- Only the first 10 pokemons are loaded. That's why no pagination is added yet.
+- Search and sort operate on the already fetched data, not the API directly. 

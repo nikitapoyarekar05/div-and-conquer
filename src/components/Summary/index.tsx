@@ -14,11 +14,11 @@ const Summary = () => {
         <header className={styles.summary}>
             <h1 className={styles.heading}>My approach: </h1>
             <p className={styles.body}>
-                Click&nbsp;
-                <Link className={styles.link} href="/approach">
-                    here
-                </Link>
-                &nbsp;to read my approach.
+                Download &nbsp;
+                <a className={styles.link} download href="/approach.txt">
+                    this
+                </a>
+                &nbsp;file to read my approach.
             </p>
 
             <dl className={styles.legend}>
