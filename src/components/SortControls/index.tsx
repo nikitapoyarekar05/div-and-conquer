@@ -25,7 +25,7 @@ const SortControls = ({
     return (
         <div className={styles.sortControls}>
             <span id="sort-label" className={styles.sortLabel}>
-                Sort by:
+                Sort by
             </span>
             <div
                 className={styles.sortOptions}
