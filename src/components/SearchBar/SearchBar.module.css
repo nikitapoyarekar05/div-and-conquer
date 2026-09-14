@@ -17,6 +17,6 @@
 }
 
 .input:focus {
-    outline: none;
+    outline: 0.125rem solid #666;
     border-color: #666;
 }

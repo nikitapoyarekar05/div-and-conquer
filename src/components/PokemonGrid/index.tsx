@@ -1,7 +1,6 @@
 import styles from './PokemonGrid.module.css';
 
 import PokemonCard from '../PokemonCard';
-
 import { Pokemon } from '@/types/pokemon';
 
 interface PokemonGridProps {
@@ -15,11 +14,11 @@ const PokemonGrid = ({ pokemons }: PokemonGridProps) => {
         );
     }
     return (
-        <div className={styles.grid}>
+        <ul className={styles.grid}>
             {pokemons.map((pokemon) => (
                 <PokemonCard key={pokemon.id} pokemon={pokemon} />
             ))}
-        </div>
+        </ul>
     );
 };
 

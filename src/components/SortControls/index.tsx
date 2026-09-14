@@ -44,12 +44,19 @@ const SortControls = ({
                         >
                             {label}
                             {isActive && (
-                                <span
-                                    className={styles.arrow}
-                                    aria-hidden="true"
-                                >
-                                    {sortOrder === 'asc' ? '↑' : '↓'}
-                                </span>
+                                <>
+                                    <span
+                                        className={styles.arrow}
+                                        aria-hidden="true"
+                                    >
+                                        {sortOrder === 'asc' ? '↑' : '↓'}
+                                    </span>
+                                    <span className={styles.screenReader}>
+                                        {sortOrder === 'asc'
+                                            ? 'ascending'
+                                            : 'descending'}
+                                    </span>
+                                </>
                             )}
                         </button>
                     );

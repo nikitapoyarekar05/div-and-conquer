@@ -14,11 +14,16 @@ const Summary = () => {
         <header className={styles.summary}>
             <h1 className={styles.heading}>My approach: </h1>
             <p className={styles.body}>
-                Download &nbsp;
-                <a className={styles.link} download href="/approach.txt">
-                    this
+                Download my approach notes&nbsp;
+                <a
+                    className={styles.link}
+                    aria-label="Download my approach notes"
+                    download
+                    href="/approach.txt"
+                >
+                    here
                 </a>
-                &nbsp;file to read my approach.
+                .
             </p>
 
             <dl className={styles.legend}>
