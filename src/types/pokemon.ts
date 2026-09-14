@@ -41,5 +41,5 @@ export interface PokemonListResponse {
     results: PokemonResult[];
 }
 
-export type sortKey = 'id' | 'hp' | 'attack' | 'defense' | 'speed';
-export type sortOrder = 'asc' | 'desc';
+export type SortKey = 'id' | 'hp' | 'attack' | 'defense' | 'speed';
+export type SortOrder = 'asc' | 'desc';

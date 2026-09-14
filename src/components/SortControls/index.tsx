@@ -1,15 +1,15 @@
 'use client';
 
 import styles from './SortControls.module.css';
-import { sortKey, sortOrder } from '@/types/pokemon';
+import { SortKey, SortOrder } from '@/types/pokemon';
 
 interface SortControlsProps {
-    sortKey: sortKey;
-    sortOrder: sortOrder;
-    onSortChange: (key: sortKey) => void;
+    sortKey: SortKey;
+    sortOrder: SortOrder;
+    onSortChange: (key: SortKey) => void;
 }
 
-const SORT_OPTIONS: { key: sortKey; label: string }[] = [
+const SORT_OPTIONS: { key: SortKey; label: string }[] = [
     { key: 'id', label: 'ID' },
     { key: 'hp', label: 'HP' },
     { key: 'attack', label: 'ATK' },

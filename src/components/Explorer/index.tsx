@@ -5,23 +5,23 @@ import styles from './Explorer.module.css';
 
 import PokemonGrid from '../PokemonGrid';
 import SearchBar from '../SearchBar';
-import { Pokemon, sortKey, sortOrder } from '@/types/pokemon';
+import { Pokemon, SortKey, SortOrder } from '@/types/pokemon';
 import SortControls from '../SortControls';
 
 interface ExplorerProps {
     pokemons: Pokemon[];
 }
 
-const getSortValue = (pokemon: Pokemon, key: sortKey): number => {
+const getSortValue = (pokemon: Pokemon, key: SortKey): number => {
     return key === 'id' ? pokemon.id : pokemon.stats[key];
 };
 
 const Explorer = ({ pokemons }: ExplorerProps) => {
     const [searchQuery, setSearchQuery] = useState('');
-    const [sortKey, setSortKey] = useState<sortKey>('id');
-    const [sortOrder, setSortOrder] = useState<sortOrder>('asc');
+    const [sortKey, setSortKey] = useState<SortKey>('id');
+    const [sortOrder, setSortOrder] = useState<SortOrder>('asc');
 
-    const handleSortChange = (key: sortKey) => {
+    const handleSortChange = (key: SortKey) => {
         if (sortKey === key) {
             setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
         } else {
