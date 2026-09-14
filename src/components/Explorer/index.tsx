@@ -56,7 +56,7 @@ const Explorer = ({ pokemons }: ExplorerProps) => {
                 />
             </div>
             <p className={styles.count} aria-live="polite">
-                {filteredPokemons.length} of {pokemons.length} shown
+                {sortedPokemons.length} of {pokemons.length} shown
             </p>
             <PokemonGrid pokemons={sortedPokemons} />
         </div>
