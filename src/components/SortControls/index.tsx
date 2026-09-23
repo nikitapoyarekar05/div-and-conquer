@@ -1,6 +1,5 @@
-'use client';
-
 import styles from './SortControls.module.css';
+
 import { SortKey, SortOrder } from '@/types/pokemon';
 
 interface SortControlsProps {
